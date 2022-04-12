@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jeecg-cloud-module</artifactId>
+        <groupId>org.jeecgframework.boot</groupId>
+        <version>3.1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>jeecg-cloud-system-start</artifactId>
+    <description>System项目微服务启动</description>
+
+    <dependencies>
+        <!-- 引入jeecg-boot-starter-cloud依赖 -->
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-starter-cloud</artifactId>
+            <!--system模块需要排除jeecg-system-cloud-api-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jeecgframework.boot</groupId>
+                    <artifactId>jeecg-system-cloud-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 引入jeecg-boot-module-system依赖 -->
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-module-system</artifactId>
+        </dependency>
+
+        <!-- 测试模块依赖 -->
+        <!--rabbitmq消息队列
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-cloud-test-rabbitmq</artifactId>
+            <version>3.1.0</version>
+        </dependency>-->
+        <!--XxlJob、分布式锁
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-cloud-test-more</artifactId>
+            <version>3.1.0</version>
+        </dependency>-->
+        <!-- 分布式事务
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-cloud-test-seata</artifactId>
+            <version>3.1.0</version>
+        </dependency>-->
+        <!-- 分库分表
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-cloud-test-shardingsphere</artifactId>
+            <version>3.1.0</version>
+        </dependency> -->
+        <!-- 测试模块依赖 -->
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
